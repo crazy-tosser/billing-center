@@ -19,16 +19,25 @@
             ></v-img>
 
             <v-card-title>
-                <v-row class="d-flex align-center justify-space-between ml-1">
-                    <span class="d-inline-block text-truncate">{{name}}</span>
-                    <v-tooltip top>
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-btn icon  v-bind="attrs" v-on="on" @click="$emit('onEdit')">
-                                <v-icon>mdi-square-edit-outline</v-icon>
-                            </v-btn>
-                        </template>
-                        <span>Редактировать</span>
-                    </v-tooltip>
+                <v-row class="d-flex flex-nowrap overflow-hidden align-center justify-space-between ml-1">
+                    <v-col  cols="10" class=" d-inline-block text-truncate">
+                        <v-tooltip bottom>
+                            <template v-slot:activator="{ on, attrs }">
+                                <span  v-bind="attrs" v-on="on">{{name}}</span>
+                            </template>
+                            <span>{{name}}</span>
+                            </v-tooltip>
+                    </v-col>
+                    <v-col cols="2" class="ml-auto">
+                        <v-tooltip top>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn icon  v-bind="attrs" v-on="on" @click="$emit('onEdit')" >
+                                    <v-icon>mdi-square-edit-outline</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Редактировать</span>
+                        </v-tooltip>
+                    </v-col>
                 </v-row>
             </v-card-title>
 
